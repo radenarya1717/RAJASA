@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --app-bg: #101827;
+    --sidebar: rgb(41, 44, 50);
+    --sidebar-main-color: #fff;
+    --table-border: #1a2131;
+    --table-header: #1a2131;
+    --app-content-main-color: #fff;
+    --sidebar-link: #fff;
+    --sidebar-active-link: #1d283c;
+    --sidebar-hover-link: #1a2539;
+    --action-color: #2869ff;
+    --action-color-hover: #6291fd;
+    --app-content-secondary-color: #1d283c;
+    --filter-reset: #2c394f;
+    --filter-shadow: rgba(16, 24, 39, 0.8) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--app-bg);
+    display: flex;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--sidebar);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar-header h1 {
+    font-size: 1.5rem;
+    color: #deebee;
+}
+
+.sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.sidebar-item {
+    margin-bottom: 22px;
+}
+
+.sidebar-item a {
+    display: flex;
+    color: var(--sidebar-link);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 1.2s, color 0.3s, transform 0.5s;
+}
+
+.sidebar-item a:hover {
+    background: var(--sidebar-hover-link);
+    color: var(--action-color);
+    transform: translateX(10px);
+}
+
+.sidebar-item a.active {
+    background: var(--sidebar-active-link);
+}
+
+.app-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.app-header {
+    background-color: var(--app-content-secondary-color);
+    color: var(--app-content-main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.user-info {
+    font-size: 1rem;
+}
+
+.app-content-body {
+    background-color: var(--app-content-main-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(229, 128, 128, 0.1);
+}
+
+/* Header pada konten */
+.app-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--app-content-secondary-color);
+    color: var(--app-content-main-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.header-left h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .app-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Tombol tambahan pasien */
+.add-patient-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--action-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.add-patient-btn:hover {
+    background-color: var(--action-color-hover);
+    transform: scale(1.05);
+}
+
+/* Style untuk tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #050505;
+    padding: 8px 12px;
+    text-align: center;
+}
+
+table th {
+    background-color: #611616;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        .app-content {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-container {
+            width: 100%;
+            max-width: 700px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: #ecf0f1;
+            background-image: url('https://via.placeholder.com/150');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-info {
+            text-align: left;
+        }
+
+        .profile-item {
+            margin-bottom: 20px;
+        }
+
+        .profile-item label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #34495e;
+            display: block;
+        }
+
+        .profile-item p {
+            margin: 5px 0 0;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        .edit-profile-btn {
+            margin-top: 30px;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #2980b9;
+        }
